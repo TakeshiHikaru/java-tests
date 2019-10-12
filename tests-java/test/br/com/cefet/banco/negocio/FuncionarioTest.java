@@ -8,7 +8,6 @@ import br.com.cefet.banco.util.BancoUtil;
 
 public class FuncionarioTest {
 	
-	//TESTE COMMIT GITHUB 22:45 08/10/2019
 	@Test
 	public void testBonificacaoCaixa() {
 		Caixa caixa = new Caixa("","","","","","", 1500.00);

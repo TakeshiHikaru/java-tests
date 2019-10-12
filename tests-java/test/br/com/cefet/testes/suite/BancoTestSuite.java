@@ -1,14 +1,19 @@
-package br.com.cefet.banco.test.suite;
+package br.com.cefet.testes.suite;
 
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 import br.com.cefet.banco.util.BancoUtilTest;
+import junit.framework.TestSuite;
 
 
 @RunWith(Suite.class)
-@SuiteClasses(BancoUtilTest.class) //testes separados por vírgula
-public class TestSuite {
+@SuiteClasses({
+	BancoUtilTest.class
+})
+
+public class BancoTestSuite {
 
 }
