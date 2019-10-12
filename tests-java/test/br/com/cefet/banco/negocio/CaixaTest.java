@@ -53,6 +53,30 @@ public class CaixaTest {
 	
 	// Utilizando a técnica dos caminhos básicos
 	@Test
+	public void testFuncionamentoEstadoCaixaEmFerias() {
+		Caixa caixa = new Caixa("","","","","caixa","", 1500.00);
+		caixa.setEstado(EstadoFuncionario.EM_FERIAS);
+		assertEquals(EstadoFuncionario.EM_FERIAS, caixa.getEstado());
+	}
+	
+	// Utilizando a técnica dos caminhos básicos
+	@Test
+	public void testFuncionamentoEstadoCaixaAfastadoPorDoenca() {
+		Caixa caixa = new Caixa("","","","","caixa","", 1500.00);
+		caixa.setEstado(EstadoFuncionario.AFASTADO_POR_DOENCA);
+		assertEquals(EstadoFuncionario.AFASTADO_POR_DOENCA, caixa.getEstado());
+	}
+	
+	// Utilizando a técnica dos caminhos básicos
+	@Test
+	public void testFuncionamentoEstadoCaixaAposentado() {
+		Caixa caixa = new Caixa("","","","","caixa","", 1500.00);
+		caixa.setEstado(EstadoFuncionario.APOSENTADO);
+		assertEquals(EstadoFuncionario.APOSENTADO, caixa.getEstado());
+	}
+	
+	// Utilizando a técnica dos caminhos básicos
+	@Test
 	public void testAuthenticacaoCaixa() {
 		Caixa caixa = new Caixa("","","","","caixa","", 1500.00);
 		assertTrue(caixa.autenticar("caixa"));

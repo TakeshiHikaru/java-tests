@@ -37,13 +37,37 @@ public class GerenteTest {
 	
 	// Utilizando a técnica dos caminhos básicos
 	@Test
-	public void testFuncionamentoEstadoGerente() {
-		Gerente gerente = new Gerente("","","","","caixa","", 3000.00);
+	public void testFuncionamentoEstadoGerenteEmExercicio() {
+		Gerente gerente = new Gerente("","","","","gerente","", 3000.00);
 		gerente.setEstado(EstadoFuncionario.EM_EXERCICIO);
 		assertEquals(EstadoFuncionario.EM_EXERCICIO, gerente.getEstado());
 	}
 	
+	// Utilizando a técnica dos caminhos básicos
+	@Test
+	public void testFuncionamentoEstadoGerenteEmFerias() {
+		Gerente gerente = new Gerente("","","","","gerente","", 3000.00);
+		gerente.setEstado(EstadoFuncionario.EM_FERIAS);
+		assertEquals(EstadoFuncionario.EM_FERIAS, gerente.getEstado());
+	}
 	
+	// Utilizando a técnica dos caminhos básicos
+	@Test
+	public void testFuncionamentoEstadoGerenteAfastadoPorDoenca() {
+		Gerente gerente = new Gerente("","","","","gerente","", 3000.00);
+		gerente.setEstado(EstadoFuncionario.AFASTADO_POR_DOENCA);
+		assertEquals(EstadoFuncionario.AFASTADO_POR_DOENCA, gerente.getEstado());
+	}
+	
+	// Utilizando a técnica dos caminhos básicos
+	@Test
+	public void testFuncionamentoEstadoGerenteAposentado() {
+		Gerente gerente = new Gerente("","","","","gerente","", 3000.00);
+		gerente.setEstado(EstadoFuncionario.APOSENTADO);
+		assertEquals(EstadoFuncionario.APOSENTADO, gerente.getEstado());
+	}
+		
+		
 	// Utilizando a técnica dos caminhos básicos
 	@Test
 	public void testAuthenticacaoGerente() {

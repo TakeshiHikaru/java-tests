@@ -31,7 +31,7 @@ public class DiretorTest {
 	// Utilizando a técnica dos caminhos básicos
 	@Test
 	public void testFuncionamentoEstadoDiretorEmFerias() {
-		Diretor diretor = new Diretor("","","","","caixa","", 10000.00);
+		Diretor diretor = new Diretor("","","","","diretor","", 10000.00);
 		diretor.setEstado(EstadoFuncionario.EM_FERIAS);
 		assertEquals(EstadoFuncionario.EM_FERIAS, diretor.getEstado());
 	}
@@ -39,7 +39,7 @@ public class DiretorTest {
 	// Utilizando a técnica dos caminhos básicos
 	@Test
 	public void testFuncionamentoEstadoDiretorAfastadoPorDoenca() {
-		Diretor diretor = new Diretor("","","","","caixa","", 10000.00);
+		Diretor diretor = new Diretor("","","","","diretor","", 10000.00);
 		diretor.setEstado(EstadoFuncionario.AFASTADO_POR_DOENCA);
 		assertEquals(EstadoFuncionario.AFASTADO_POR_DOENCA, diretor.getEstado());
 	}
@@ -47,7 +47,7 @@ public class DiretorTest {
 	// Utilizando a técnica dos caminhos básicos
 	@Test
 	public void testFuncionamentoEstadoDiretorAposentado() {
-		Diretor diretor = new Diretor("","","","","caixa","", 10000.00);
+		Diretor diretor = new Diretor("","","","","diretor","", 10000.00);
 		diretor.setEstado(EstadoFuncionario.APOSENTADO);
 		assertEquals(EstadoFuncionario.APOSENTADO, diretor.getEstado());
 	}
@@ -55,7 +55,7 @@ public class DiretorTest {
 	// Utilizando a técnica dos caminhos básicos
 	@Test
 	public void testFuncionamentoEstadoDiretorEmExercicio() {
-		Diretor diretor = new Diretor("","","","","caixa","", 10000.00);
+		Diretor diretor = new Diretor("","","","","diretor","", 10000.00);
 		diretor.setEstado(EstadoFuncionario.EM_EXERCICIO);
 		assertEquals(EstadoFuncionario.EM_EXERCICIO, diretor.getEstado());
 	}
