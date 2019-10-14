@@ -9,10 +9,10 @@ import br.com.cefet.banco.persistencia.bd.ContaDAOTest;
 
 @RunWith(Suite.class)
 @SuiteClasses({ 
+	ContaDAOTest.class,
 	BancoNegocioTestSuite.class, 
 	BancoTestSuite.class,
 	ClienteDAOTest.class,
-	ContaDAOTest.class
 })
 public class RegressaoTestSuite {
 
