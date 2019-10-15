@@ -69,7 +69,8 @@ public class ContaDAOTest {
 	@Test
 	public void removerContaTest() {
 		this.contaDAO.remove(this.contaCorrente);
-		assertEquals(null,this.contaDAO.getConta(1));
+		this.contaDAO.remove(this.contaPoupanca);
+		assertNull(this.contaDAO.getContaDeCliente(this.titular));
 	}
 
 }

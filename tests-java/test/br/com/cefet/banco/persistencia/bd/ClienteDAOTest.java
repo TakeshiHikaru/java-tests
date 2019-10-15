@@ -14,15 +14,15 @@ public class ClienteDAOTest {
 	public void testBuscaClientePeloId() {
 		ClienteDAO dao = new ClienteDAO();
 		Cliente cliente = dao.getCliente(1);
-		assertEquals("clienteTest", cliente.getNome());
+		assertEquals("Nome", cliente.getNome());
 	}
 	
 	// Utilizando a técnica dos caminhos básicos
 	@Test
 	public void testBuscaClientePeloUsuario() {
 		ClienteDAO dao = new ClienteDAO();
-		Cliente cliente = dao.getCliente("cliente");
-		assertEquals("clienteTest", cliente.getNome());
+		Cliente cliente = dao.getCliente("userTest");
+		assertEquals("Nome", cliente.getNome());
 	}
 	
 	// Utilizando a técnica dos caminhos básicos 
@@ -30,11 +30,11 @@ public class ClienteDAOTest {
 	@Test
 	public void testExclusaoUsuario() {
 		ClienteDAO dao = new ClienteDAO();
-		Cliente clienteTest = new Cliente("cliente exclusão", "endereço", "111.111.111-11", "clienteexclusao", "clienteexclusao");
+		Cliente clienteTest = new Cliente("cliente exclusao", "endereço", "111.111.111-11", "clienteexclusao", "clienteexclusao");
 		dao.adicionaCliente(clienteTest);
-		Cliente cliente = dao.getCliente("cliente exclusão");
+		Cliente cliente = dao.getCliente("clienteexclusao");
 		dao.remove(cliente);
-		assertEquals(null, dao.getCliente("cliente exclusão"));
+		assertNull(dao.getCliente("cliente exclusão"));
 	}
 
 
