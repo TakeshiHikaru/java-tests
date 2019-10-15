@@ -2,22 +2,15 @@ package br.com.cefet.banco.persistencia.bd;
 
 import static org.junit.Assert.*;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.junit.Before;
 import org.junit.Test;
 
-import br.com.cefet.banco.negocio.Caixa;
 import br.com.cefet.banco.negocio.Cliente;
-import br.com.cefet.banco.negocio.ContaCorrente;
-import br.com.cefet.banco.negocio.ContaPoupanca;
 
 public class ClienteDAOTest {
 	
 	ClienteDAO clienteDAO;
 	
-	//A tabela de contas deve estar vazia
 	@Before
 	public void inicializaConta() {
 		this.clienteDAO = new ClienteDAO();
