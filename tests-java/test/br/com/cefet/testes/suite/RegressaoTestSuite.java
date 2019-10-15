@@ -4,6 +4,8 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
+import br.com.cefet.banco.apresentacao.PainelCadastrarClienteTest;
+import br.com.cefet.banco.apresentacao.PainelCadastrarFuncionarioTest;
 import br.com.cefet.banco.persistencia.bd.ClienteDAOTest;
 import br.com.cefet.banco.persistencia.bd.ContaDAOTest;
 
@@ -13,6 +15,8 @@ import br.com.cefet.banco.persistencia.bd.ContaDAOTest;
 	BancoNegocioTestSuite.class, 
 	BancoTestSuite.class,
 	ClienteDAOTest.class,
+	PainelCadastrarClienteTest.class,
+	PainelCadastrarFuncionarioTest.class
 })
 public class RegressaoTestSuite {
 
