@@ -44,7 +44,7 @@ public class ClienteDAOTest {
 		this.clienteDAO.adicionaCliente(clienteTest);
 		Cliente cliente = this.clienteDAO.getCliente("clienteexclusao");
 		this.clienteDAO.remove(cliente);
-		assertNull(this.clienteDAO.getCliente("clienteexclusão"));
+		assertNull(this.clienteDAO.getCliente("clienteexclusao"));
 	}
 	
 	// Utilizando a técnica dos caminhos básicos 
