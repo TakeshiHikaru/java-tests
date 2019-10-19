@@ -123,5 +123,21 @@ public class CaixaTest {
 		Caixa caixa = new Caixa("Nome Caixa","Endereço Caixa","111.111.111.11","direção","caixa","caixa", 1500.00);
 		assertEquals("caixa", caixa.getUsuario());
 	}
+	
+	// Teste utilizando a técnica do critério de decisões
+	@Test
+	public void testaCadastroTipoCargoCaixaComGetTipoString() {
+		Caixa caixa = new Caixa("Nome Caixa","Endereço Caixa","111.111.111.11","direção","caixa","caixa", 1500.00);
+		caixa.setCargo(0);
+		assertEquals("Caixa", caixa.getCargoStr());
+	}
+	
+	// Teste utilizando a técnica do critério de decisões
+	@Test
+	public void testaCadastroTipoCargoCaixaComValorInvalido() {
+		Caixa caixa = new Caixa("Nome Caixa","Endereço Caixa","111.111.111.11","direção","caixa","caixa", 1500.00);
+		caixa.setCargo(2);
+		assertEquals("Caixa", caixa.getCargoStr());
+	}
 
 }

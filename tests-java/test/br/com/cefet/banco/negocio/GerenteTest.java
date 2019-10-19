@@ -117,5 +117,21 @@ public class GerenteTest {
 		Gerente gerente = new Gerente("Nome Gerente","Endereço Gerente","111.111.111.11","direção","gerente","gerente", 3000.00);
 		assertEquals("gerente", gerente.getUsuario());
 	}
+	
+	// Teste utilizando a técnica do critério de decisões
+	@Test
+	public void testaCadastroTipoCargoGerenteComGetTipoString() {
+		Gerente gerente = new Gerente("Nome Gerente","Endereço Gerente","111.111.111.11","direção","gerente","gerente", 3000.00);
+		gerente.setCargo(1);
+		assertEquals("Gerente", gerente.getCargoStr());
+	}
+
+	// Teste utilizando a técnica do critério de decisões
+	@Test
+	public void testaCadastroTipoCargoGerenteComValorInvalido() {
+		Diretor diretor = new Diretor("Nome Diretor","Endereço diretor","111.111.111.11","direção","diretor","diretor", 10000.00);
+		diretor.setCargo(0);
+		assertEquals("Diretor", diretor.getCargoStr());
+	}
 
 }

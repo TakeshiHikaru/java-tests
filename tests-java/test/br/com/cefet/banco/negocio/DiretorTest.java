@@ -13,11 +13,18 @@ public class DiretorTest {
 		assertEquals(5000.00, diretor.getBonificacao(), 0.0);
 	}
 	
-	// Utilizando a técnica dos caminhos básicos
+	// Utilizando a técnica do critério de decisões
 	@Test
 	public void testAuthenticacaoDiretor() {
 		Diretor diretor = new Diretor("","","","","diretor","", 10000.00);
 		assertTrue(diretor.autenticar("diretor"));
+	}
+	
+	// Utilizando a técnica do critério de decisões
+	@Test
+	public void testAuthenticacaoDiretorComSenhaErrada() {
+		Diretor diretor = new Diretor("","","","","diretor","", 10000.00);
+		assertTrue(!diretor.autenticar("diretor1"));
 	}
 	
 	// Utilizando a técnica dos valores limites
@@ -116,5 +123,112 @@ public class DiretorTest {
 		Diretor diretor = new Diretor("Nome Diretor","Endereço diretor","111.111.111.11","direção","diretor","diretor", 10000.00);
 		assertEquals("diretor", diretor.getUsuario());
 	}
+	
+	// Teste utilizando a técnica do critério de decisões
+	@Test
+	public void testaTipoCargoDiretorComGetTipoString() {
+		Diretor diretor = new Diretor("Nome Diretor","Endereço diretor","111.111.111.11","direção","diretor","diretor", 10000.00);
+		diretor.setCargo(2);
+		assertEquals("Diretor", diretor.getCargoStr());
+	}
+	
+	// Teste utilizando a técnica do critério de decisões
+	// 
+	@Test
+	public void testaTipoCargoDiretorComGetTipoStringEValorInvalido() {
+		Diretor diretor = new Diretor("Nome Diretor","Endereço diretor","111.111.111.11","direção","diretor","diretor", 10000.00);
+		diretor.setCargo(1);
+		assertEquals("Diretor", diretor.getCargoStr());
+	}
+	
+	// Teste utilizando a técnica do critério de decisões
+	// 
+	@Test
+	public void testaTipoCargoDiretorComGetTipoStringCargoInvalido() {
+		Diretor diretor = new Diretor("Nome Diretor","Endereço diretor","111.111.111.11","direção","diretor","diretor", 10000.00);
+		diretor.setCargo(5);
+		assertEquals("Cargo inválido", diretor.getCargoStr());
+	}
+	
+	// Teste utilizando a técnica do critério de decisões
+	@Test
+	public void testaImpressaoResumoDiretor() {
+		Diretor diretor = new Diretor("Nome Diretor","Endereço diretor","111.111.111.11","direção","diretor","diretor", 10000.00);
+		diretor.setEstado(EstadoFuncionario.EM_EXERCICIO);
+		diretor.imprimirResumo();
+	}
+	
+	// Utilizando a técnica dos caminhos básicos
+	@Test
+	public void testaGetESetNomeDiretor() {
+		Diretor diretor = new Diretor("","","111.111.111.11","direção","diretor","diretor", 10000.00);
+		diretor.setNome("diretor");
+		assertEquals("diretor", diretor.getNome());
+	}
+	
+	// Utilizando a técnica dos caminhos básicos
+	@Test
+	public void testaGetESetEnderecoDiretor() {
+		Diretor diretor = new Diretor("","","111.111.111.11","direção","diretor","diretor", 10000.00);
+		diretor.setEndereco("endereço diretor");
+		assertEquals("endereço diretor", diretor.getEndereco());
+	}
+	
+	// Utilizando a técnica dos caminhos básicos
+	@Test
+	public void testaGetESetDepartamentoDiretor() {
+		Diretor diretor = new Diretor("","","111.111.111.11","direção","diretor","diretor", 10000.00);
+		diretor.setDepartamento("departamento diretor");
+		assertEquals("departamento diretor", diretor.getDepartamento());
+	}
+	
+	// Utilizando a técnica dos caminhos básicos
+	@Test
+	public void testaGetESetSalarioDiretor() {
+		Diretor diretor = new Diretor("","","111.111.111.11","direção","diretor","diretor", 10000.00);
+		diretor.setSalario(5000);
+		assertEquals(5000, diretor.getSalario(), 0.00001);
+	}
+	
+	// Utilizando a técnica dos caminhos básicos
+	@Test
+	public void testaGetESetSenhaDiretor() {
+		Diretor diretor = new Diretor("","","111.111.111.11","direção","diretor","diretor", 10000.00);
+		diretor.setSenha("senhadiretor");
+		assertEquals("senhadiretor", diretor.getSenha());
+	}
+	
+	// Utilizando a técnica dos caminhos básicos
+	@Test
+	public void testaGetESetCpfDiretor() {
+		Diretor diretor = new Diretor("","","","direção","diretor","diretor", 10000.00);
+		diretor.setCpf("111.111.111.11");
+		assertEquals("111.111.111.11", diretor.getCpf());
+	}
+
+	// Utilizando a técnica dos caminhos básicos
+	@Test
+	public void testaGetESetUsuarioDiretor() {
+		Diretor diretor = new Diretor("","","","","","", 10000.00);
+		diretor.setUsuario("diretor");
+		assertEquals("diretor", diretor.getUsuario());
+	}
+	
+	// Utilizando a técnica dos caminhos básicos
+	@Test
+	public void testaGetESetIdDiretor() {
+		Diretor diretor = new Diretor("","","","","","", 10000.00);
+		diretor.setId(1);
+		assertEquals(1, diretor.getId());
+	}
+	
+	// Utilizando a técnica dos caminhos básicos
+	@Test
+	public void testaGetESetIdCargo() {
+		Diretor diretor = new Diretor("","","","","","", 10000.00);
+		diretor.setCargo(2);
+		assertEquals(2, diretor.getCargo());
+	}
+	
 
 }
