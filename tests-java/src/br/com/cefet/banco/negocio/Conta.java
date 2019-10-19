@@ -42,7 +42,7 @@ public abstract class Conta implements Comparable<Conta>{
 				throw new SaldoInsuficienteException("Saldo insuficiente. Você só pode sacar "+
 						this.getSaldo()+this.getLimite());
 			}
-	}
+	} 
 
 	public void depositar(double valor)throws DepositoInvalidoException { double novoSaldo=this.saldo+=valor;
 		if (valor >= 0) { 
