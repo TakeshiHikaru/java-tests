@@ -29,7 +29,7 @@ public class FuncionariosTableModel extends AbstractTableModel{
 			dataFuncionarios[i][4] = paymentFormat.format(listaFuncionarios.get(i).getSalario());
 
 		}
-		
+		 
 	}
 	
 	@Override
