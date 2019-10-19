@@ -19,7 +19,7 @@ public class GerenteTest {
 		Gerente gerente = new Gerente("","","","","gerente","", 3000.00);
 		gerente.aumentarSalario(1);
 		assertEquals(3030, gerente.getSalario(), 0.001);
-	}
+	} 
 	
 	// Utilizando a técnica dos valores limites
 	@Test

@@ -230,5 +230,27 @@ public class DiretorTest {
 		assertEquals(2, diretor.getCargo());
 	}
 	
+	// Utilizando a técnica dos caminhos básicos
+	@Test
+	public void testaAuthenticarDiretorString() {
+		Diretor diretor = new Diretor("","","","","senhadiretor","", 10000.00);
+		assertTrue(diretor.autenticar("senhadiretor"));
+	}
+	
+	// Utilizando a técnica do critério de decisões
+	@Test
+	public void testaAuthenticarDiretorInt() {
+		Diretor diretor = new Diretor("","","","","senhadiretor","", 10000.00);
+		assertTrue(diretor.autenticar("senhadiretor"));
+	}
+	
+	// Utilizando a técnica do critério de decisões
+	@Test
+	public void testaAuthenticarDiretorSenhaErradaInt() {
+		Diretor diretor = new Diretor("","","","","senhadiretor","", 10000.00);
+		assertTrue(!diretor.autenticar(123));
+	}
+		
+	
 
 }

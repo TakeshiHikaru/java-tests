@@ -91,4 +91,20 @@ public class ContaCorrenteTest {
 		conta.imprimirResumo();
 	}
 	
+	// Teste utilizando a técnica dos caminhos básicos
+	@Test
+	public void testaAplicacaoTaxaContaCorrente() {
+		ContaCorrente conta = new ContaCorrente(1500);
+		conta.atualiza(100);
+		assertEquals(1300, conta.getSaldo(), 0.0001);
+	}
+	
+	// Teste utilizando a técnica dos caminhos básicos
+	@Test
+	public void testaContaCorrentComLimiteInicial() {
+		ContaCorrente conta = new ContaCorrente(1000,2000);
+		assertEquals(1000, conta.getSaldo(), 0.0001);
+		assertEquals(2000, conta.getLimite(), 0.0001);
+	}
+	
 }

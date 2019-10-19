@@ -121,7 +121,7 @@ public class ContaPoupancaTest {
 	
 	// Teste utilizando a técnica dos caminhos básicos
 	@Test
-	public void testaCadastroIdContaComLimiteInicial() {
+	public void testaContaPoupancaComLimiteInicial() {
 		ContaPoupanca conta = new ContaPoupanca(1000,2000);
 		assertEquals(1000, conta.getSaldo(), 0.0001);
 		assertEquals(2000, conta.getLimite(), 0.0001);
@@ -165,6 +165,14 @@ public class ContaPoupancaTest {
 		Cliente titular = new Cliente("titular", "", "", "", "");
 		conta.setTitular(titular);
 		assertEquals(titular, conta.getTitular());
+	}
+	
+	// Teste utilizando a técnica dos caminhos básicos
+	@Test
+	public void testaAplicacaoTaxaContaPoupanca() {
+		ContaPoupanca conta = new ContaPoupanca(1500);
+		conta.atualiza(100);
+		assertEquals(1400, conta.getSaldo(), 0.0001);
 	}
 	
 	 
