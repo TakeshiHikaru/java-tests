@@ -2,10 +2,6 @@ package br.com.cefet.banco.persistencia.bd;
 
 import static org.junit.Assert.*;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-
 import org.junit.Before;
 import org.junit.Test;
 
