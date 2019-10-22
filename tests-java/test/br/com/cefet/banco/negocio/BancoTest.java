@@ -48,7 +48,6 @@ public class BancoTest {
 		//SM = saldo médio
 		/* RT(receita total do banco)/TC(total de clientes no banco)
 		 * */
-		double atual = this.conta.getLimite();
 		Banco banco = new Banco();
 		double RT = banco.calcularSaldoTotal();
 		double GT = banco.calcularTotalDeGastos();

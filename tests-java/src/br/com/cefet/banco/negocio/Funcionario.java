@@ -1,5 +1,7 @@
 package br.com.cefet.banco.negocio;
 
+import br.com.cefet.banco.persistencia.bd.FuncionarioDAO;
+
 /**
  * @author marco
  *
@@ -165,6 +167,48 @@ public abstract class Funcionario implements Autenticavel{
 		return totalFuncionarios;
 	}
 
+	//TDD 1
+//	public void promover() {
+//		this.setCargo(1);
+//	}
 	
+	//TDD 2
+//	public void promover() {
+//		if(this.getCargo()==0) {
+//			this.setCargo(1);
+//		} else {
+//			this.setCargo(2);
+//		}
+//	}
+	
+	//TDD 3
+//	public void promover() {
+//		switch(this.getCargo()) {
+//			case 0:
+//				this.setCargo(1);
+//				break;
+//			case 1:
+//				this.setCargo(2);
+//				break;
+//			default:
+//				break;
+//		}
+//	}
+	
+	//TDD 4
+	public static void promover(Funcionario func) {
+		FuncionarioDAO funcDAO = new FuncionarioDAO();
+		switch(func.getCargo()) {
+			case 0:
+				func.setCargo(1);
+				break;
+			case 1:
+				func.setCargo(2);
+				break;
+			default:
+				break;
+		}
+		funcDAO.altera(func);
+	}
 	
 }

@@ -48,6 +48,10 @@ public class PainelConsultarFuncionario extends JPanel implements ActionListener
 	private JFormattedTextField bonificacaoTxt;
 	private JPanel panelConta;
 	private JButton btnSalvarAlteraes;
+	
+	//TDD
+	private JButton btnSubirCargo;
+	
 	private JComboBox comboBox;
 	private Autenticavel usuarioLogado;
 
@@ -146,7 +150,6 @@ public class PainelConsultarFuncionario extends JPanel implements ActionListener
 		panelDadosPessoais.add(cpfTxt);
 
 		panelConta = new JPanel();
-		sl_panelDadosPessoais.putConstraint(SpringLayout.SOUTH, panelConta, -10, SpringLayout.SOUTH, panelDadosPessoais);
 		panelConta.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Dados financeiros", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		sl_panelDadosPessoais.putConstraint(SpringLayout.WEST, panelConta, 10, SpringLayout.WEST, panelDadosPessoais);
 		sl_panelDadosPessoais.putConstraint(SpringLayout.EAST, panelConta, -10, SpringLayout.EAST, panelDadosPessoais);
@@ -191,6 +194,8 @@ public class PainelConsultarFuncionario extends JPanel implements ActionListener
 		
 		btnSalvarAlteraes = new JButton("Salvar altera\u00E7\u00F5es");
 		sl_panelDadosPessoais.putConstraint(SpringLayout.NORTH, panelConta, 20, SpringLayout.SOUTH, btnSalvarAlteraes);
+		sl_panelDadosPessoais.putConstraint(SpringLayout.NORTH, panelConta, 20, SpringLayout.SOUTH, btnSalvarAlteraes);
+		sl_panelDadosPessoais.putConstraint(SpringLayout.NORTH, panelConta, 20, SpringLayout.SOUTH, btnSalvarAlteraes);
 		sl_panelDadosPessoais.putConstraint(SpringLayout.EAST, btnSalvarAlteraes, 0, SpringLayout.EAST, nomeTxt);
 		btnSalvarAlteraes.setActionCommand("Salvar alterações");
 		btnSalvarAlteraes.addActionListener(this);
@@ -213,6 +218,7 @@ public class PainelConsultarFuncionario extends JPanel implements ActionListener
 		panelDadosPessoais.add(departamentoTxt);
 		
 		JLabel lblCargo = new JLabel("Cargo");
+		sl_panelDadosPessoais.putConstraint(SpringLayout.SOUTH, panelConta, -47, SpringLayout.NORTH, lblCargo);
 		sl_panelDadosPessoais.putConstraint(SpringLayout.NORTH, btnSalvarAlteraes, -4, SpringLayout.NORTH, lblCargo);
 		sl_panelDadosPessoais.putConstraint(SpringLayout.NORTH, lblCargo, 30, SpringLayout.SOUTH, lblDepartamento);
 		sl_panelDadosPessoais.putConstraint(SpringLayout.WEST, lblCargo, 0, SpringLayout.WEST, lblNome);
@@ -227,6 +233,16 @@ public class PainelConsultarFuncionario extends JPanel implements ActionListener
 		comboBox.setEnabled(false);
 		comboBox.setFont(new Font("Arial", Font.PLAIN, 18));
 		panelDadosPessoais.add(comboBox);
+		
+		//TDD
+		btnSubirCargo = new JButton("Subir cargo");
+		sl_panelDadosPessoais.putConstraint(SpringLayout.NORTH, btnSubirCargo, -3, SpringLayout.NORTH, lblCargo);
+		sl_panelDadosPessoais.putConstraint(SpringLayout.WEST, btnSubirCargo, 110, SpringLayout.WEST, comboBox);
+		btnSubirCargo.setActionCommand("Subir cargo");
+		btnSubirCargo.addActionListener(this);
+		btnSubirCargo.setEnabled(false);
+		btnSubirCargo.setFont(new Font("Arial", Font.PLAIN, 18));
+		panelDadosPessoais.add(btnSubirCargo);
 
 		JPanel panelEsquerda = new JPanel();
 		panelEsquerda.setPreferredSize(new Dimension(100, 100));
@@ -270,8 +286,12 @@ public class PainelConsultarFuncionario extends JPanel implements ActionListener
 					this.departamentoTxt.setText(funcionarioEncontrado.getDepartamento());
 					this.comboBox.setSelectedIndex(funcionarioEncontrado.getCargo());
 					this.btnSalvarAlteraes.setEnabled(true);
+					//TDD
+					this.btnSubirCargo.setEnabled(true);
 				} else {
 					this.btnSalvarAlteraes.setEnabled(false);
+					//TDD
+					this.btnSubirCargo.setEnabled(false);
 					JOptionPane.showMessageDialog(this, "Funcionário não encontrado!", "Erro", JOptionPane.WARNING_MESSAGE);
 					apagaCampos();
 				}
@@ -308,7 +328,7 @@ public class PainelConsultarFuncionario extends JPanel implements ActionListener
 										paymentFormat.parse(this.salarioTxt.getText()).doubleValue());
 								break;
 							case 2:
-								funcionarioAlterado = new Diretor(this.nomeTxt.getText(), 
+								funcionarioAlterado = new Diretor(this.nomeTxt.getText(),
 										this.enderecoTxt.getText(), 
 										this.cpfTxt.getText(), 
 										this.departamentoTxt.getText(), 
@@ -328,6 +348,9 @@ public class PainelConsultarFuncionario extends JPanel implements ActionListener
 						e1.printStackTrace();
 					}
 				}
+			//TDD
+			} else if("Subir cargo".equals(e.getActionCommand())) {
+				Funcionario.promover(this.funcionarioDao.getFuncionario(Integer.parseInt(this.getIdFuncionarioTxt().getText())));
 			} else {
 				JOptionPane.showMessageDialog(this, "Erro no preenchimento do formulário!", "Erro", JOptionPane.ERROR_MESSAGE);
 			}
@@ -344,6 +367,8 @@ public class PainelConsultarFuncionario extends JPanel implements ActionListener
 		this.bonificacaoTxt.setText("");
 		this.comboBox.setSelectedIndex(0);
 		this.btnSalvarAlteraes.setEnabled(false);
+		//TDD
+		this.btnSubirCargo.setEnabled(false);
 		this.comboBox.setEnabled(false);
 	}
 	
