@@ -6,14 +6,11 @@ import org.junit.Test;
 public class ClockLabelTest {
 
 	ClockLabel clock;
-	@Before
-	public void iniciaTeste() {
-		this.clock = new ClockLabel();
-	}
 	
+	//teste utilizando técnica dos caminhos básicos
 	@Test
-	public void testaAlgo() {
-		
+	public void inicializaTelaClockLabel() {
+		this.clock = new ClockLabel();
 	}
 
 }

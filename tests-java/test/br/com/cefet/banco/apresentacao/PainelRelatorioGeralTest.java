@@ -9,18 +9,10 @@ import br.com.cefet.banco.negocio.Caixa;
 
 public class PainelRelatorioGeralTest {
 
-	PainelRelatorioGeral tela;
-
-	// técnica de percorrer os caminhos básicos
-	@Before
-	public void inicializaTest() {
-		this.tela = new PainelRelatorioGeral();
-	}
-	
+	// teste utilizando técnica para percorrer os caminhos básicos
 	@Test
-	public void testeQualquer() {
-		
+	public void testeInicializaPainelRelatorio() {
+		PainelRelatorioGeral tela  = new PainelRelatorioGeral();
 	}
-
 
 }

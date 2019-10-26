@@ -10,14 +10,9 @@ public class TelaLoginTest {
 	TelaLogin tela;
 
 	// técnica de percorrer os caminhos básicos
-	@Before
-	public void inicializaTest() {
-		this.tela = new TelaLogin();
-	}
-	
 	@Test
-	public void testeQualquer() {
-		
+	public void testeInicializaTelaLogin() {
+		this.tela = new TelaLogin();
 	}
 
 }

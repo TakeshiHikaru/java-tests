@@ -12,15 +12,11 @@ public class TelaAlterarSenhaTest {
 	TelaAlterarSenha tela;
 
 	// técnica de percorrer os caminhos básicos
-	@Before
-	public void inicializaTest() {
+	@Test
+	public void testeInicializaTelaComUsuarioLogado() {
 		Caixa caixa = new Caixa("nome", "endereço", "", "", "", "", 1500);
 		this.tela = new TelaAlterarSenha(caixa);
-	}
-	
-	@Test
-	public void testeQualquer() {
-		
+		assertEquals(caixa, tela.getUsuarioLogado());
 	}
 
 }

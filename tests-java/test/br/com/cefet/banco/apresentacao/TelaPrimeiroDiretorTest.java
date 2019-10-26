@@ -12,14 +12,9 @@ public class TelaPrimeiroDiretorTest {
 	TelaPrimeiroDiretor tela;
 
 	// técnica de percorrer os caminhos básicos
-	@Before
-	public void inicializaTest() {
-		this.tela = new TelaPrimeiroDiretor();
-	}
-	
 	@Test
-	public void testeQualquer() {
-		
+	public void testeInicializaTelaPrimeiroDiretor() {
+		this.tela = new TelaPrimeiroDiretor();
 	}
 
 }
