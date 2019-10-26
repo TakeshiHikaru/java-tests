@@ -20,11 +20,21 @@ public class BancoTest {
 		this.conta.setTitular(titular);
 	}
 	
+	//teste utilizando técnica de todas as decisões
 	@Test
 	public void limiteMaximoComSaldoMenorQueZeroDeveSerLimiteAtual() {
 		double atual = this.conta.getLimite();
 		Banco banco = new Banco();
 		assertEquals(atual,banco.calcularLimiteMaximo(this.conta),0.1);
+	}
+	
+	//teste utilizando técnica de todas as decisões //TEM QUE PERCORRER TODOS OS CAMINHOS DO MÉTODO CALCULAR LIMIIT MÁXIMO BANCO.JAVA
+	// UTILIZAR TAMBÉM TÉCNICA DE TODAS AS CONDIÇÕES COM DECISÕES
+	@Test
+	public void limiteMaximoComSaldoMaiorQueZeroDeve() {
+		Conta conta = new ContaCorrente(500);
+		double atual = conta.getLimite();
+		Banco banco = new Banco();
 	}
 	
 	@Test
