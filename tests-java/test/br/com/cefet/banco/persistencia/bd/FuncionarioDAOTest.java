@@ -57,7 +57,7 @@ public class FuncionarioDAOTest {
 	// considerando que o gerente tem id igual a 4 MUDAR ISSO FUTURAMENTE
 	@Test
 	public void pegaFuncionarioGerentePeloIdTest() {
-		Funcionario funcionario = this.funcionarioDAO.getFuncionario(4);
+		Funcionario funcionario = this.funcionarioDAO.getFuncionario(3);
 		assertEquals("gerente", funcionario.getUsuario());
 	}
 	
