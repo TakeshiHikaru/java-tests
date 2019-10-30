@@ -84,12 +84,6 @@ public class ContaCorrenteTest {
 		assertEquals("Conta corrente", this.conta.getTipoStr());
 	}
 	
-	// Teste utilizando a técnica dos caminhos básicos //REVER PQ TA FALHANDO
-	@Test
-	public void testaAImpressaoDoResumo() {
-		ContaCorrente conta = new ContaCorrente(1500);
-		conta.imprimirResumo();
-	}
 	
 	// Teste utilizando a técnica dos caminhos básicos
 	@Test

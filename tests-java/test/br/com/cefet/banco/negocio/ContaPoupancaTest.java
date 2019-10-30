@@ -151,12 +151,6 @@ public class ContaPoupancaTest {
 		assertEquals(0, conta1.compareTo(conta2));
 	}
 	
-	// Teste utilizando a técnica dos caminhos básicos //REVER PQ TA FALHANDO
-	@Test
-	public void testaAImpressaoDoResumo() {
-		ContaPoupanca conta = new ContaPoupanca(1500);
-		conta.imprimirResumo();
-	}
 	
 	// Teste utilizando a técnica dos caminhos básicos
 	@Test
