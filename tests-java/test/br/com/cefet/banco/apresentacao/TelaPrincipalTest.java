@@ -7,8 +7,12 @@ import org.junit.Test;
 
 import br.com.cefet.banco.negocio.Caixa;
 import br.com.cefet.banco.negocio.Cliente;
+import br.com.cefet.banco.negocio.Conta;
+import br.com.cefet.banco.negocio.ContaPoupanca;
 import br.com.cefet.banco.negocio.Diretor;
 import br.com.cefet.banco.negocio.Gerente;
+import br.com.cefet.banco.persistencia.bd.ClienteDAO;
+import br.com.cefet.banco.persistencia.bd.ContaDAO;
 
 public class TelaPrincipalTest {
 
@@ -17,6 +21,12 @@ public class TelaPrincipalTest {
 	@Test
 	public void testaCriacaoTelaPrincipalUsuarioCliente() {
 		Cliente cliente = new Cliente("cliente", "", "", "", "");
+		Conta conta = new ContaPoupanca(500);
+		conta.setTitular(cliente);
+		ClienteDAO clienteDAO = new ClienteDAO();
+		clienteDAO.adicionaCliente(cliente);
+		ContaDAO contaDAO = new ContaDAO();
+		contaDAO.adicionaConta(conta);
 		TelaPrincipal tela = new TelaPrincipal(cliente);
 		assertEquals("cliente", tela.getNomeUsuario());
 	}
